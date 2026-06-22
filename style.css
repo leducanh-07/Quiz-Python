@@ -1,0 +1,389 @@
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
+  --border: rgba(255, 255, 255, 0.2);
+
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --code-bg: rgba(15, 23, 42, 0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   BACKGROUND ADA WONG
+========================= */
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+
+  background-image: url("./ada_wong.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  position: relative;
+}
+
+/* lớp phủ giúp ảnh đẹp hơn */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45));
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.quiz-container {
+  width: 100%;
+  max-width: 900px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  margin-bottom: 25px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 20px;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   SESSION SELECT
+========================= */
+
+.session-selector-container {
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  margin-bottom: 20px;
+}
+
+.session-selector-container label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-weight: 600;
+
+  color: white;
+}
+
+#session-select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-size: 0.95rem;
+
+  cursor: pointer;
+}
+
+#session-select option {
+  color: black;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+  height: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+
+  transition: 0.3s;
+}
+
+/* =========================
+   META
+========================= */
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(59, 130, 246, 0.2);
+
+  color: white;
+
+  padding: 5px 12px;
+
+  border-radius: 999px;
+}
+
+#question-counter {
+  color: #f1f5f9;
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+#question-text {
+  font-size: 1.25rem;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+
+  color: white;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   CODE BLOCK
+========================= */
+
+.code-block {
+  background: var(--code-bg);
+
+  color: white;
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+
+  overflow-x: auto;
+
+  border-left: 5px solid #38bdf8;
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  width: 100%;
+
+  text-align: left;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 15px 18px;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition: 0.25s;
+}
+
+.option-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.25);
+
+  transform: translateY(-2px);
+}
+
+.option-btn.correct {
+  background: rgba(22, 163, 74, 0.4);
+
+  border-color: #16a34a;
+}
+
+.option-btn.wrong {
+  background: rgba(220, 38, 38, 0.4);
+
+  border-color: #dc2626;
+}
+
+/* =========================
+   EXPLANATION
+========================= */
+
+.explanation-box {
+  margin-top: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-left: 5px solid #60a5fa;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  color: white;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+  border: none;
+
+  width: 100%;
+
+  padding: 15px;
+
+  margin-top: 20px;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-restart {
+  background: #334155;
+  color: white;
+}
+
+/* =========================
+   RESULT SCREEN
+========================= */
+
+.result-screen {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  text-align: center;
+
+  z-index: 50;
+}
+
+#score {
+  font-size: 4rem;
+  color: #60a5fa;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  #question-text {
+    font-size: 1.05rem;
+  }
+}

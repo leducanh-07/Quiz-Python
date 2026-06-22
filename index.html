@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Ultimate Session Quiz Review</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-overlay"></div>
+    <div class="quiz-container">
+      <header>
+        <h1>Hệ Thống Ôn Tập Python Toàn Diện (SS02 - SS16)</h1>
+
+        <div class="session-selector-container">
+          <label for="session-select"><b>Chọn bài học ôn tập:</b> </label>
+          <select id="session-select">
+            <option value="session02">Session 02: Toán tử & Điều kiện</option>
+            <option value="session03">Session 03: Vòng lặp cơ bản</option>
+            <option value="session05">Session 05: Vòng lặp nâng cao</option>
+            <option value="session07">Session 07: Chuỗi nâng cao - String</option>
+            <option value="session09">Session 09: Danh sách - List cơ bản</option>
+            <option value="session11">Session 11: Tuple & Dictionary</option>
+            <option value="session14">Session 14: Hàm cơ bản</option>
+            <option value="session16">Session 16: Hàm nâng cao</option>
+            <option value="session16">Session 20: Clean code and Debug</option>
+            <option value="session16">Session 23: Module and Package</option>
+            <option value="session16">Session 24: OOP and Encapsulation</option>
+            <option value="session16">Session 26: Các tính chất của OOP</option>
+          </select>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="quiz-meta">
+          <span id="session-tag" class="badge">Session</span>
+          <span id="question-counter">Câu hỏi: 1/20</span>
+        </div>
+      </header>
+
+      <main id="quiz-body">
+        <h2 id="question-text">Nội dung câu hỏi...</h2>
+        <pre id="code-block" class="code-block"><code></code></pre>
+        <div id="options-container" class="options-grid"></div>
+      </main>
+
+      <section id="explanation-box" class="explanation-box hidden">
+        <h3>💡 Giải thích kiến thức:</h3>
+        <p id="explanation-text"></p>
+      </section>
+
+      <footer>
+        <button id="next-btn" class="btn btn-primary hidden">
+          Câu tiếp theo →
+        </button>
+      </footer>
+
+      <div id="result-screen" class="result-screen hidden">
+        <h2>🎉 Hoàn Thành Session!</h2>
+        <p class="score-text">
+          Số điểm của bạn: <span id="score">0</span>/<span id="total-score"
+            >20</span
+          >
+        </p>
+        <div class="score-feedback" id="score-feedback"></div>
+        <button id="restart-btn" class="btn btn-restart">
+          Làm lại Session này
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
