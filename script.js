@@ -1076,7 +1076,7 @@ add(1,2,3,4)
     explanation: "*args nhận 4 đối số.",
   },
 ];
-quizData.session20 = [
+quizData.session20 = [  
   {
     question: "Clean Code là gì?",
     code: "",
